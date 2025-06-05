@@ -31,4 +31,43 @@ Desarrollar una herramienta interactiva y educativa que permita a los usuarios i
 
    ```bash
    cd /ruta/a/raices-polinomicas
+   
+3. Crea y activa un entorno virtual:
+python -m venv env
+env\Scripts\activate      # En Windows
+source env/bin/activate   # En Linux/macOS
 
+4. Instala las dependencias:
+   pip install -r requirements.txt
+   
+6. Ejecuta el servidor:
+   python manage.py runserver
+
+7. http://127.0.0.1:8000/
+
+   ✅ Funcionalidades
+Ingreso de función polinómica vía formulario.
+
+Selección del método numérico a aplicar.
+
+Parámetros dinámicos según el método elegido:
+
+a, b, tolerancia y número de iteraciones para Bisección.
+
+x₀, tolerancia y número de iteraciones para Newton-Raphson.
+
+Tabla de resultados iterativos.
+
+Cálculo del error relativo.
+
+Exportación de resultados a PDF.
+
+Validación de entrada del usuario y gestión de errores comunes.
+
+📚 Créditos
+Desarrollado por: Freyder José Sequén Urlao
+Curso: Métodos Numéricos
+Universidad Mariano Gálvez de Guatemala – 2025
+
+📝 Licencia
+Este proyecto se desarrolló con fines académicos. Puede reutilizarse o adaptarse siempre y cuando se cite su origen.
