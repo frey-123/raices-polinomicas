@@ -1,0 +1,128 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Títulos */
+h1, h2, h3 {
+    color: #2e407d;
+    margin-bottom: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Tabla de iteraciones */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+thead {
+    background-color: #388e3c;
+    color: white;
+}
+
+th, td {
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* Imagen de la gráfica */
+img[alt="Gráfica"] {
+    max-width: 100%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin: 30px auto;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+    display: block;
+}
+
+/* Formulario */
+form {
+    background-color: #ffffff;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Botón */
+button, input[type="submit"] {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #1b5e20;
+}
+
+/* Enlace de regreso */
+a {
+    display: inline-block;
+    margin-top: 30px;
+    color: #2e7d72;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #1b5e20;
+}
+
+/* Mensaje de error */
+.error {
+    color: red;
+    margin-top: 20px;
+    font-weight: bold;
+}

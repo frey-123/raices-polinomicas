@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        h1 { color: #2e7d32; text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #333; padding: 8px; text-align: center; }
+        th { background-color: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Resultado del método: {{ metodo }}</h1>
+    <p><strong>Raíz aproximada:</strong> {{ raiz }}</p>
+
+    <h3>Tabla de iteraciones:</h3>
+    <table>
+        <thead>
+            <tr>
+                {% for key in iteraciones.0.keys %}
+                    <th>{{ key }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for fila in iteraciones %}
+                <tr>
+                    {% for valor in fila.values %}
+                        <td>{{ valor }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

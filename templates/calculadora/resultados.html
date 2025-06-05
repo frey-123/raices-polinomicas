@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+ {% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Resultados - {{ metodo }}</title>
+        <!-- Cargar archivos estáticos en Django -->
+  
+    <!-- Enlazar el archivo CSS -->
+    <link rel="stylesheet"  href="{% static 'css/nuevo.css' %}">
+</head>
+<body>
+    <h1>Método: {{ metodo }}</h1>
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% else %}
+        <h2>Raíz aproximada: {{ raiz }}</h2>
+        <img src="data:image/png;base64,{{ grafica }}" alt="Gráfica" style="max-width: 600px;">
+        <h3>Iteraciones:</h3>
+        <table>
+            <thead>
+                <tr>
+                    {% for key in iteraciones.0.keys %}
+                        <th>{{ key }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in iteraciones %}
+                <tr>
+                    {% for value in row.values %}
+                        <td>{{ value|floatformat:6 }}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <form action="{% url 'generar_pdf' %}" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="iteraciones" value="{{ iteraciones|safe }}">
+    <input type="hidden" name="raiz" value="{{ raiz }}">
+    <input type="hidden" name="metodo" value="{{ metodo }}">
+    <button type="submit">📄 Descargar PDF</button>
+</form>
+    {% endif %}
+    <p><a href="{% url 'calcular_raiz' %}">Calcular otra raíz</a></p>
+</body>
+</html>

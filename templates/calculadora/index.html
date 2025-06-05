@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+ {% load static %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de raíces</title>
+       
+    <!-- Enlazar el archivo CSS -->
+    <link rel="stylesheet" href="{% static 'css/nuevo.css' %}">
+    
+
+    <script>
+        function mostrarCampos() {
+            const metodo = document.getElementById('id_metodo').value;
+            document.getElementById('biseccion_campos').style.display = metodo === 'biseccion' ? 'block' : 'none';
+            document.getElementById('newton_campos').style.display = (metodo === 'newton' || metodo === 'newton_mod') ? 'block' : 'none';
+        }
+        window.onload = function() {
+            mostrarCampos();
+            document.getElementById('id_metodo').addEventListener('change', mostrarCampos);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de raíces numéricas</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>{{ form.funcion.label_tag }}<br>{{ form.funcion }}</p>
+        <p>{{ form.metodo.label_tag }}<br>{{ form.metodo }}</p>
+        
+        <div id="biseccion_campos" style="display:none;">
+            <p>{{ form.a.label_tag }}<br>{{ form.a }}</p>
+            <p>{{ form.b.label_tag }}<br>{{ form.b }}</p>
+        </div>
+        
+        <div id="newton_campos" style="display:none;">
+            <p>{{ form.x0.label_tag }}<br>{{ form.x0 }}</p>
+        </div>
+        
+        <p>{{ form.tol.label_tag }}<br>{{ form.tol }}</p>
+        <p>{{ form.max_iter.label_tag }}<br>{{ form.max_iter }}</p>
+        
+        <button type="submit">Calcular</button>
+    </form>
+    {% if form.errors %}
+    <div style="color:red;">
+        {{ form.errors }}
+    </div>
+    {% endif %}
+</body>
+</html>
