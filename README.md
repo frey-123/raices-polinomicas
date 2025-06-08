@@ -70,9 +70,9 @@ http://127.0.0.1:8000
 - 📥 **Ingreso de funciones polinómicas** mediante un formulario web amigable.
 
 - 🔘 **Selección del método numérico deseado**:  
-  &nbsp;&nbsp;&nbsp;&nbsp;• Bisección  
-  &nbsp;&nbsp;&nbsp;&nbsp;• Newton-Raphson  
-  &nbsp;&nbsp;&nbsp;&nbsp;• Newton-Raphson Modificado
+   Bisección  
+   Newton-Raphson  
+   Newton-Raphson Modificado
 
 - ⚙️ **Parámetros configurables según el método**:  
   - **Bisección**: intervalo \[a, b\], tolerancia, número de iteraciones.  
