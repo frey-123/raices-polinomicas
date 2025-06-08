@@ -1,107 +1,98 @@
-##
-📐 Calculadora de Raíces Polinómicas en Django
-🧮 Descripción General
-La Calculadora de Raíces Polinómicas es una aplicación web desarrollada con el framework Django que tiene como finalidad resolver ecuaciones polinómicas mediante métodos numéricos clásicos, ampliamente utilizados en ingeniería y ciencias aplicadas. Su diseño está enfocado en ser una herramienta educativa, interactiva y de fácil acceso que permita comprender el comportamiento y convergencia de los distintos métodos iterativos para encontrar raíces reales de funciones polinómicas.
-##
-🔢 Métodos Implementados
-Método de Bisección: Basado en el teorema del valor intermedio, divide iterativamente el intervalo hasta aproximar una raíz.
+# 📐 Calculadora de Raíces Polinómicas en Django
 
-Método de Newton-Raphson: Utiliza la derivada de la función para aproximar la raíz con mayor velocidad, ideal cuando se cuenta con una buena estimación inicial.
+## 🧮 Descripción General
 
-Método de Newton-Raphson Modificado: Variante del anterior que mejora la estabilidad de la convergencia en algunos casos particulares.
-##
-🎯 Objetivo del Proyecto
-Diseñar e implementar una plataforma web funcional y educativa que permita a los usuarios:
+La **Calculadora de Raíces Polinómicas** es una aplicación web desarrollada con el framework **Django** que permite resolver ecuaciones polinómicas utilizando **métodos numéricos clásicos**. Su objetivo principal es ser una herramienta **educativa e interactiva** para la comprensión de algoritmos iterativos de búsqueda de raíces reales.
 
-Ingresar funciones polinómicas personalizadas.
+### Métodos Implementados
 
-Seleccionar el método numérico deseado.
+- 🔹 **Método de Bisección**
+- 🔹 **Método de Newton-Raphson**
+- 🔹 **Método de Newton-Raphson Modificado**
 
-Introducir los parámetros específicos requeridos para cada método.
+---
 
-Visualizar el proceso iterativo completo a través de una tabla detallada.
+## 🎯 Objetivo del Proyecto
 
-Obtener la raíz aproximada de forma clara y estructurada.
+Desarrollar una plataforma web intuitiva que permita:
 
-Descargar los resultados generados en formato PDF para su documentación o análisis posterior.
+- Ingresar funciones polinómicas.
+- Seleccionar el método numérico a utilizar.
+- Introducir parámetros específicos según el método.
+- Visualizar paso a paso el proceso iterativo en una tabla.
+- Obtener la raíz aproximada.
+- Descargar los resultados en **PDF**.
 
-El sistema también se encarga de realizar la validación de datos y la gestión de errores comunes para garantizar una experiencia fluida y confiable.
-##
-🛠️ Tecnologías Utilizadas
-Componente	Tecnología
-Backend	Python 3.10+, Django Framework
-Frontend	HTML5, CSS3, Bootstrap (opcional)
-Librerías	- SymPy: para derivación y evaluación simbólica
-- NumPy: cálculos numéricos
-- ReportLab o xhtml2pdf: generación de PDF
-- Matplotlib o Plotly (opcional): visualización gráfica
-Entorno	Virtualenv para la gestión del entorno Python
-##
-🚀 Instalación y Ejecución
-1. Clonar el repositorio
-bash
-Copiar
-Editar
+Además, se implementa validación de entradas y manejo de errores para evitar inconsistencias.
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+| Componente      | Tecnología                                                                 |
+|-----------------|----------------------------------------------------------------------------|
+| **Backend**     | Python 3.10+, Django Framework                                              |
+| **Frontend**    | HTML5, CSS3, Bootstrap (opcional)                                           |
+| **Librerías**   | SymPy, NumPy, ReportLab/xhtml2pdf (para PDF), Matplotlib/Plotly (opcional) |
+| **Entorno**     | Virtualenv para entorno Python aislado                                     |
+
+---
+
+## 🚀 Instalación y Ejecución
+
+Sigue los siguientes pasos para instalar y ejecutar el proyecto en tu máquina local:
+
+```bash
+# 1. Clona el repositorio
 git clone https://github.com/usuario/raices-polinomicas.git
-O descargar el archivo .zip del proyecto y descomprimirlo.
-
-2. Acceder al directorio del proyecto
-bash
-Copiar
-Editar
 cd raices-polinomicas
-3. Crear y activar el entorno virtual
-En Windows:
 
-bash
-Copiar
-Editar
+# 2. Crea y activa el entorno virtual
+
+## En Windows
 python -m venv env
 env\Scripts\activate
-En Linux/macOS:
 
-bash
-Copiar
-Editar
+## En Linux/macOS
 python3 -m venv env
 source env/bin/activate
-4. Instalar dependencias
-bash
-Copiar
-Editar
+
+# 3. Instala las dependencias
 pip install -r requisitos.txt
-5. Ejecutar el servidor de desarrollo
-bash
-Copiar
-Editar
+
+# 4. Ejecuta el servidor de desarrollo
 python manage.py runserver
-Luego, abre tu navegador en http://127.0.0.1:8000
-##
-✅ Funcionalidades Principales
-📥 Formulario amigable para ingresar funciones polinómicas.
 
-🔘 Selección dinámica de métodos numéricos.
+# 5. Abre tu navegador y ve a:
+http://127.0.0.1:8000
+## ✅ Funcionalidades
 
-⚙️ Parámetros configurables por método:
+- 📥 **Ingreso de funciones polinómicas** mediante un formulario web amigable.
 
-Bisección: Intervalo [a, b], tolerancia, número máximo de iteraciones.
+- 🔘 **Selección del método numérico deseado**:  
+  &nbsp;&nbsp;&nbsp;&nbsp;• Bisección  
+  &nbsp;&nbsp;&nbsp;&nbsp;• Newton-Raphson  
+  &nbsp;&nbsp;&nbsp;&nbsp;• Newton-Raphson Modificado
 
-Newton-Raphson (simple y modificado): Valor inicial x₀, tolerancia, número de iteraciones.
+- ⚙️ **Parámetros configurables según el método**:  
+  - **Bisección**: intervalo \[a, b\], tolerancia, número de iteraciones.  
+  - **Newton-Raphson**: valor inicial x₀, tolerancia, número de iteraciones.
 
-📊 Generación de tabla detallada con iteraciones paso a paso.
+- 📊 **Tabla detallada de resultados** por cada iteración.
 
-📉 Cálculo de errores relativos y convergencia del método.
+- 📉 **Cálculo del error relativo** en cada paso del proceso.
 
-📄 Exportación de resultados a PDF, con formato limpio y ordenado.
+- 📄 **Exportación de resultados en formato PDF** con diseño limpio y profesional.
 
-🔐 Validación de entradas y manejo de errores para evitar bloqueos o mal funcionamiento.
+- ❌ **Gestión de errores comunes y validación** de entradas del usuario.
 
-📚 Créditos y Reconocimiento
-Autor: Freyder José Sequén Urlao
-Curso: Métodos Numéricos
-Universidad: Universidad Mariano Gálvez de Guatemala
-Año: 2025
+- 🌐 **Interfaz responsiva y simple**, ideal para fines educativos.
 
-Proyecto realizado con fines educativos para reforzar el aprendizaje de métodos numéricos aplicados a la resolución de polinomios reales.
+---
 
+## 📚 Créditos
 
+- **Autor**: Freyder José Sequén Urlao  
+- **Curso**: Métodos Numéricos  
+- **Proyecto académico de**: Universidad Mariano Gálvez de Guatemala  
+- **Año**: 2025
