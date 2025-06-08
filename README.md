@@ -71,5 +71,3 @@ Desarrollado por: Freyder José Sequén Urlao
 Curso: Métodos Numéricos
 Universidad Mariano Gálvez de Guatemala – 2025
 
-📝 Licencia
-Este proyecto se desarrolló con fines académicos. Puede reutilizarse o adaptarse siempre y cuando se cite su origen.
